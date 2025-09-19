@@ -90,26 +90,27 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background" data-testid="page-home">
-      {/* Hero Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-primary/5 to-accent/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-serif font-bold text-foreground mb-6">
-              Открийте изкуството в неговата 
-              <span className="text-primary block mt-2">най-чиста форма</span>
+      {/* Hero Section - Apple Style */}
+      <section className="py-24 md:py-32 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold text-foreground mb-6 tracking-tight leading-none">
+              Открийте изкуството в неговата
+              <br />
+              <span className="text-primary">най-чиста форма</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto font-normal">
               Платформа за художествени творби, която свързва таланливи автори с любители на изкуството. 
               Персонализирайте дизайна и управлявайте съдържанието лесно и интуитивно.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild data-testid="button-explore-gallery">
+              <Button size="lg" className="rounded-full px-8 py-6 text-base font-medium" asChild data-testid="button-explore-gallery">
                 <Link href="/gallery">
                   Разгледайте галерията
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild data-testid="button-view-authors">
+              <Button variant="outline" size="lg" className="rounded-full px-8 py-6 text-base font-medium border-2" asChild data-testid="button-view-authors">
                 <Link href="/authors">
                   Вижте авторите
                 </Link>
@@ -120,16 +121,16 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-6 border-b border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-20 px-6 bg-muted/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
-                  <stat.icon className="h-6 w-6 text-primary" />
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-background rounded-2xl shadow-sm border border-border/50 mb-6">
+                  <stat.icon className="h-7 w-7 text-primary" />
                 </div>
-                <div className="text-3xl font-bold text-foreground mb-2">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-4xl font-semibold text-foreground mb-3 tracking-tight">{stat.value}</div>
+                <div className="text-base text-muted-foreground font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -137,14 +138,13 @@ export default function Home() {
       </section>
 
       {/* Featured Artworks */}
-      <section className="py-20 px-6">
+      <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <Badge variant="secondary" className="mb-4">Препоръчано</Badge>
-            <h2 className="text-4xl font-serif font-bold text-foreground mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-semibold text-foreground mb-6 tracking-tight">
               Избрани произведения
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-normal leading-relaxed">
               Открийте най-популярните и високо оценени произведения от нашите талантливи автори
             </p>
           </div>
@@ -156,7 +156,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <Button variant="outline" size="lg" asChild data-testid="button-view-all-artworks">
+            <Button variant="outline" size="lg" className="rounded-full px-8 py-6 text-base font-medium border-2" asChild data-testid="button-view-all-artworks">
               <Link href="/gallery">
                 Вижте всички произведения
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -167,14 +167,13 @@ export default function Home() {
       </section>
 
       {/* Featured Authors */}
-      <section className="py-20 px-6 bg-muted/30">
+      <section className="py-24 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <Badge variant="secondary" className="mb-4">Автори</Badge>
-            <h2 className="text-4xl font-serif font-bold text-foreground mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-semibold text-foreground mb-6 tracking-tight">
               Талантливи творци
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-normal leading-relaxed">
               Запознайте се с авторите, които създават невероятни произведения на изкуството
             </p>
           </div>
@@ -186,7 +185,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <Button variant="outline" size="lg" asChild data-testid="button-view-all-authors">
+            <Button variant="outline" size="lg" className="rounded-full px-8 py-6 text-base font-medium border-2" asChild data-testid="button-view-all-authors">
               <Link href="/authors">
                 Вижте всички автори
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -197,14 +196,13 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-6">
+      <section className="py-24 px-6 bg-muted/20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <Badge variant="secondary" className="mb-4">Възможности</Badge>
-            <h2 className="text-4xl font-serif font-bold text-foreground mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-semibold text-foreground mb-6 tracking-tight">
               Пълен контрол над дизайна
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-normal leading-relaxed">
               Персонализирайте всеки аспект от визията на вашата галерия с нашия мощен контролен панел
             </p>
           </div>
@@ -253,11 +251,11 @@ export default function Home() {
             </Card>
           </div>
 
-          <div className="text-center mt-12">
-            <Button size="lg" asChild data-testid="button-admin-panel">
+          <div className="text-center mt-16">
+            <Button size="lg" className="rounded-full px-8 py-6 text-base font-medium" asChild data-testid="button-admin-panel">
               <Link href="/admin">
                 Отидете в контролния панел
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
